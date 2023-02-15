@@ -10,6 +10,8 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.*;
 
+import java.io.IOException;
+
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -149,6 +151,19 @@ public class ProvaTecnicaTest {
         deleteSimulacaoErro("/api/v1/simulacoes/", 9999);
     }
 
+    @Test
+    @Order(11)
+    public void alterarSimulacaoTest() throws IOException {
+        SimulacaoDTO novaSimulacao1 = criarDummySimulacao();
+        SimulacaoDTO simulacaoResource = createSimulacao("api/v1/simulacoes", novaSimulacao1);
+        SimulacaoDTO novaSimulacao2 = criarDummySimulacaoAlterada(simulacaoResource.getId());
+
+        alterarSimulacao("/api/v1/simulacoes/11615734619", novaSimulacao2 );
+        getSimulacao("api/v1/simulacoes/", "75360381604");
+
+        deleteSimulacao("/api/v1/simulacoes/", simulacaoResource.getId());
+    }
+
 
 
 
@@ -167,6 +182,17 @@ public class ProvaTecnicaTest {
     private SimulacaoDTO criarDummySimulacao(){
         return new SimulacaoDTO()
                 .setCpf("11615734619")
+                .setEmail("virgiliocomp@gmail.com")
+                .setNome("Virgilio Cruvinel")
+                .setValor(1050)
+                .setParcelas(5)
+                .setSeguro(true);
+    }
+
+    private SimulacaoDTO criarDummySimulacaoAlterada(int id){
+        return new SimulacaoDTO()
+                .setId(id)
+                .setCpf("75360381604")
                 .setEmail("virgiliocomp@gmail.com")
                 .setNome("Virgilio Cruvinel")
                 .setValor(1050)
@@ -244,5 +270,19 @@ public class ProvaTecnicaTest {
                 .delete(path + id)
                 .then()
                 .statusCode(404);
+    }
+
+    private void alterarSimulacao(String path, Object objectPayload){
+        given()
+                .contentType("application/json")
+                .log().all()
+                .body(objectPayload)
+
+                .when()
+                .put(path)
+                .then()
+                .statusCode(200)
+                .log().all()
+        ;
     }
 }
