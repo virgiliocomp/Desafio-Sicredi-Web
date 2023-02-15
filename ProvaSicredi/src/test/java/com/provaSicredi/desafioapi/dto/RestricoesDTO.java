@@ -1,4 +1,4 @@
-package com.provaSicredi.apitests.dto;
+package com.provaSicredi.desafioapi.dto;
 
 public class RestricoesDTO {
     private String cpf;

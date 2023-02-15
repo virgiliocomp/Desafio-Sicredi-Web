@@ -1,7 +1,7 @@
-package com.provaSicredi.apitests.tests;
+package com.provaSicredi.desafioapi.tests;
 
-import com.provaSicredi.apitests.dto.RestricoesDTO;
-import com.provaSicredi.apitests.dto.SimulacaoDTO;
+import com.provaSicredi.desafioapi.dto.RestricoesDTO;
+import com.provaSicredi.desafioapi.dto.SimulacaoDTO;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
@@ -10,10 +10,7 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.*;
 
-import java.util.List;
-
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)

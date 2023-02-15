@@ -1,4 +1,4 @@
-package com.provaSicredi.apitests.dto;
+package com.provaSicredi.desafioapi.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

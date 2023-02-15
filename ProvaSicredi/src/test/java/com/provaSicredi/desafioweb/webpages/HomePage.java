@@ -1,12 +1,10 @@
-package com.provaSicredi.webpages;
+package com.provaSicredi.desafioweb.webpages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-
-import java.util.List;
 
 public class HomePage {
     private WebDriver driver;
@@ -44,6 +42,7 @@ public class HomePage {
 
     @FindBy(xpath = "/html/body/div[3]/span[3]")
     private WebElement caixaConfirmacao;
+
     public HomePage(WebDriver driver){
         this.driver = driver;
         driver.get(URL);

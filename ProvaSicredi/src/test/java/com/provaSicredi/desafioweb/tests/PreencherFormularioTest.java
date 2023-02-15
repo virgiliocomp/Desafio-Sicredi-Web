@@ -1,7 +1,7 @@
-package com.provaSicredi.tests;
+package com.provaSicredi.desafioweb.tests;
 
-import com.provaSicredi.webpages.AddRecordPage;
-import com.provaSicredi.webpages.HomePage;
+import com.provaSicredi.desafioweb.webpages.AddRecordPage;
+import com.provaSicredi.desafioweb.webpages.HomePage;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -91,7 +91,6 @@ public class PreencherFormularioTest {
 
     public void limpaBase() throws InterruptedException {
         HomePage home = new HomePage(driver);
-        home.clicarLinkGoBackToList();
         home.preencherInputCustomerName("Teste Sicredi");
         Thread.sleep(3000);
         home.preencherCheckboxActions();
