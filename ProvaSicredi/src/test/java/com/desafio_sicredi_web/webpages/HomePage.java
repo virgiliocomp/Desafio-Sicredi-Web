@@ -1,4 +1,4 @@
-package com.provaSicredi.desafioweb.webpages;
+package com.desafio_sicredi_web.webpages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

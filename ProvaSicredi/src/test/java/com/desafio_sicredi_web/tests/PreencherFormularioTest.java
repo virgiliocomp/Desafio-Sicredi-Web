@@ -1,7 +1,7 @@
-package com.provaSicredi.desafioweb.tests;
+package com.desafio_sicredi_web.tests;
 
-import com.provaSicredi.desafioweb.webpages.AddRecordPage;
-import com.provaSicredi.desafioweb.webpages.HomePage;
+import com.desafio_sicredi_web.webpages.AddRecordPage;
+import com.desafio_sicredi_web.webpages.HomePage;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
